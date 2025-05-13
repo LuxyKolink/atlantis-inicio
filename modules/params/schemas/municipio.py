@@ -26,7 +26,7 @@ class Municipio(MunicipioBase):
     id: int
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # Extended Municipio response with related departamento

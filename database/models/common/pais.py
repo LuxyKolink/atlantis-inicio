@@ -11,7 +11,6 @@ class Pais(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     nombre: str = Field(index=True, schema_extra={"pattern": r"^[A-Za-z\s]+$"}, description="Nombre oficial del país")
     codigo: str = Field(max_length=2, unique=True)
-    continente: str = Field(index=True, description="Continente al que pertenece el país")
     
     # Relación con Departamento (se define después de la clase Departamento)
     departamentos: List["Departamento"] = Relationship(back_populates="pais")

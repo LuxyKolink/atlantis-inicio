@@ -1,12 +1,18 @@
+from dotenv import load_dotenv
+import os
 from database.base_db import Database
 from database.models.common.departamento import Departamento
 from database.models.common.municipio import Municipio
 from database.models.common.pais import Pais
 
+# Cargar variables de entorno
+load_dotenv()
+
 
 class PostgresDatabase(Database):
     def __init__(self, required=False):  # Postgres es secundario, no requerido; No es necesario inicializarlo si no está disponible
-        super().__init__("POSTGRES_DATABASE_URL", required=required)
+        postgres_url = os.getenv("POSTGRES_DATABASE_URL", "postgresql://user:password@localhost/dbname")
+        super().__init__(postgres_url, required=required)
         
     def initialize(self):
         # Registra que modelos usar en base de datos

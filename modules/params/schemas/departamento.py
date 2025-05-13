@@ -26,7 +26,7 @@ class Departamento(DepartamentoBase):
     id: int
     
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # Extended Departamento response with related país

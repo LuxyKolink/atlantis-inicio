@@ -1,11 +1,6 @@
-# database/base.py
-import os
 from typing import List, Type
 from sqlmodel import SQLModel, create_engine, Session
 from dotenv import load_dotenv
-
-# Cargar variables de entorno
-load_dotenv()
 
 class Database:
     """
@@ -17,7 +12,7 @@ class Database:
     - Gestionar sesiones de base de datos
     """
     
-    def __init__(self, url_env_var, echo=True, required=False):
+    def __init__(self, url_var, echo=True, required=False):
         """
         Inicializa una conexión a la base de datos.
         
@@ -26,7 +21,7 @@ class Database:
             echo: Activa/desactiva la salida SQL en consola (depuración)
         """
         # Obtener URL de la base de datos desde la variable de entorno
-        self.url = "sqlite:///./data.db"
+        self.url = url_var
         self.echo = echo
         self.required = required
         # Crear el motor de base de datos (engine)
