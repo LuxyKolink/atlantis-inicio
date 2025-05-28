@@ -13,9 +13,9 @@ from sqlmodel import SQLModel
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 # Import all your models to ensure they're registered with SQLModel's metadata
-from database.models.common.pais import Pais
-from database.models.common.departamento import Departamento
-from database.models.common.municipio import Municipio
+from database.models.sqlmodel.shared.pais import Pais
+from database.models.sqlmodel.shared.departamento import Departamento
+from database.models.sqlmodel.shared.municipio import Municipio
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

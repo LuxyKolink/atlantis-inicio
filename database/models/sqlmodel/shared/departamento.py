@@ -2,8 +2,8 @@ from typing import TYPE_CHECKING, List, Optional
 from sqlmodel import SQLModel, Field, Relationship
 
 if TYPE_CHECKING:
-    from database.models.common.pais import Pais  # Importar aquí para evitar problemas de referencia circular
-    from database.models.common.municipio import Municipio  # Importar aquí para evitar problemas de referencia circular
+    from database.models.sqlmodel.shared.pais import Pais  # Importar aquí para evitar problemas de referencia circular
+    from database.models.sqlmodel.shared.municipio import Municipio  # Importar aquí para evitar problemas de referencia circular
 
 class Departamento(SQLModel, table=True):
     __tablename__ = "departamentos"

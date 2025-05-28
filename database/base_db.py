@@ -17,7 +17,7 @@ class Database:
         Inicializa una conexión a la base de datos.
         
         Args:
-            url_env_var: Variable de entorno que contiene la URL de conexión
+            url_var: Variable de entorno que contiene la URL de conexión
             echo: Activa/desactiva la salida SQL en consola (depuración)
         """
         # Obtener URL de la base de datos desde la variable de entorno

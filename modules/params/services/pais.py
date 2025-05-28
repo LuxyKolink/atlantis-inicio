@@ -1,13 +1,14 @@
 from typing import List
 
 from fastapi import HTTPException
-from database.models.common.pais import Pais
-from modules.params.repositories.pais import PaisRepository
+from database.models.sqlmodel.shared.pais import Pais
+from modules.params.repositories.adapter.pais_repository_interface import PaisRepositoryInterface
+# from modules.params.repositories.adapter.sqlite.pais import PaisRepository
 from modules.params.schemas.pais import PaisCreate
 
 
 class PaisService():
-    def __init__(self, pais_repository: PaisRepository):
+    def __init__(self, pais_repository: PaisRepositoryInterface):
         self.pais_repository = pais_repository
 
     def get_all(self, skip: int = 0, limit: int = 100) -> List[Pais]:

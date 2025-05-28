@@ -2,10 +2,11 @@ from typing import List
 from sqlmodel import select
 
 # from sqlmodel import select
-from database.models.common.pais import Pais
+from database.models.sqlmodel.shared.pais import Pais
+from modules.params.repositories.adapter.pais_repository_interface import PaisRepositoryInterface
 
 
-class PaisRepository:
+class SQLitePaisRepository(PaisRepositoryInterface):
     def __init__(self, db):
         self.db = db
 
@@ -40,3 +41,9 @@ class PaisRepository:
         self.db.commit()
         self.db.refresh(pais)
         return pais
+    
+    def update(self, id: int, pais: Pais) -> Pais:
+        return 'not implemented'
+
+    def delete(self, id: int) -> bool:
+        return 'not implemented'

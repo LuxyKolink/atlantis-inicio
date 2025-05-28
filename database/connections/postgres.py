@@ -1,9 +1,9 @@
 from dotenv import load_dotenv
 import os
 from database.base_db import Database
-from database.models.common.departamento import Departamento
-from database.models.common.municipio import Municipio
-from database.models.common.pais import Pais
+from database.models.sqlmodel.shared.departamento import Departamento
+from database.models.sqlmodel.shared.municipio import Municipio
+from database.models.sqlmodel.shared.pais import Pais
 
 # Cargar variables de entorno
 load_dotenv()

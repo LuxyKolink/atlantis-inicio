@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING, Optional
 from sqlmodel import SQLModel, Field, Relationship
 
 if TYPE_CHECKING:
-    from database.models.common.departamento import Departamento  # Importar aquí para evitar problemas de referencia circular
+    from database.models.sqlmodel.shared.departamento import Departamento  # Importar aquí para evitar problemas de referencia circular
 
 
 class Municipio(SQLModel, table=True):
